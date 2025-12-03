@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site de Jeux - Prêt au Lancement</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">Arcane</a>
+          <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#tournois">Tournois</a></li>
+            <li><a href="#jouer">Jouer</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <!-- ADDED onclick -->
+          <div class="hamburger" onclick="toggleMenu();">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+        <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+        <div class="mobile-menu" id="mobileMenu">
+          <div class="close-btn" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+          </div>
+          <a href="#home" onclick="toggleMenu()">Accueil</a>
+          <a href="#competences" onclick="toggleMenu()">Compétences</a>
+          <a href="#tournois" onclick="toggleMenu()">Tournois</a>
+          <a href="#jouer" onclick="toggleMenu()">jouer</a>
+          <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+
+        <div id="loginModal" class="modal">
+          <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required />
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required />
+              <button type="submit">Login</button>
+              <p class="login-message">
+                Pas de compte ?
+                <a href="register1.html" id="openRegister">Créer un compte</a>
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <div id="registerModal" class="modal">
+          <div class="modal-content">
+            <span class="register-close">×</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+              <label for="newUsername">Username:</label>
+              <input type="text" id="newUsername" name="username" required />
+              <label for="newPassword">Password:</label>
+              <input
+                type="password"
+                id="newPassword"
+                name="password"
+                required
+              />
+              <label for="confirmPassword">Confirm Password:</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                required
+              />
+              <button type="submit">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Plongez dans l'univers du gaming compétitif</h1>
+          <p>
+            Rejoignez notre communauté de joueurs passionnés, participez à des
+            tournois excitants et améliorez vos compétences avec nos ressources
+            exclusives.
+          </p>
+          <a href="#jouer" class="btn">Commencer à jouer</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences" class="section">
+      <div class="container">
+        <h2>Nos Compétences</h2>
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Compétition de haut niveau</h3>
+            <p>
+              Notre plateforme accueille les meilleurs joueurs avec un système
+              de matchmaking équilibré et des classements précis.
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Communauté active</h3>
+            <p>
+              Rejoignez une communauté de milliers de joueurs passionnés, prêts
+              à partager conseils et stratégies.
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Analyse de performance</h3>
+            <p>
+              Bénéficiez d'analyses détaillées de vos parties pour identifier
+              vos forces et points à améliorer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tournois" class="tournaments section">
+      <div class="container">
+        <h2>Prochains Tournois</h2>
+        <div class="tournament-container">
+          <div class="tournament-card">
+            <div class="tournament-img">
+              <img
+                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Tournois 1"
+              />
+            </div>
+            <div class="tournament-info">
+              <h3>Championnat d'Été</h3>
+              <div class="tournament-meta">
+                <span><i class="far fa-calendar-alt"></i> 15 Juillet 2023</span>
+                <span><i class="fas fa-users"></i> 128 joueurs</span>
+              </div>
+              <p>
+                Le tournoi phare de l'été avec un prize pool de 10,000€. Ouvert
+                à tous les niveaux avec différentes divisions.
+              </p>
+              <a href="#" class="btn">S'inscrire</a>
+            </div>
+          </div>
+          <div class="tournament-card">
+            <div class="tournament-img">
+              <img
+                src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                alt="Tournois 2"
+              />
+            </div>
+            <div class="tournament-info">
+              <h3>Ligue des Débutants</h3>
+              <div class="tournament-meta">
+                <span><i class="far fa-calendar-alt"></i> 5 Août 2023</span>
+                <span><i class="fas fa-users"></i> 64 joueurs</span>
+              </div>
+              <p>
+                Spécialement conçu pour les nouveaux joueurs. Apprenez les bases
+                en compétitionnant contre des joueurs de votre niveau.
+              </p>
+              <a href="#" class="btn">S'inscrire</a>
+            </div>
+          </div>
+          <div class="tournament-card">
+            <div class="tournament-img">
+              <img
+                src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Tournois 3"
+              />
+            </div>
+            <div class="tournament-info">
+              <h3>Coupe des Champions</h3>
+              <div class="tournament-meta">
+                <span
+                  ><i class="far fa-calendar-alt"></i> 20 Septembre 2023</span
+                >
+                <span><i class="fas fa-users"></i> 32 joueurs</span>
+              </div>
+              <p>
+                Réservé aux meilleurs joueurs de la saison. Format à élimination
+                directe avec cash prize garanti.
+              </p>
+              <a href="#" class="btn">S'inscrire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jouer" class="play-section section">
+      <div class="container">
+        <h2>Choisissez votre Jeu</h2>
+        <p>
+          Accédez instantanément à nos serveurs dédiés et commencez à jouer
+          immédiatement.
+        </p>
+        <div class="game-container">
+          <div class="game-card">
+            <div class="game-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <h3>Mode Classé</h3>
+            <p>
+              Affrontez des joueurs de votre niveau et montez dans le
+              classement.
+            </p>
+            <a href="#" class="btn" style="margin-top: 15px">Jouer</a>
+          </div>
+          <div class="game-card">
+            <div class="game-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Mode Amical</h3>
+            <p>
+              Créez des parties privées avec vos amis sans affecter votre
+              classement.
+            </p>
+            <a href="#" class="btn" style="margin-top: 15px">Jouer</a>
+          </div>
+          <div class="game-card">
+            <div class="game-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>Entraînement</h3>
+            <p>
+              Améliorez vos compétences contre nos intelligences artificielles
+              avancées.
+            </p>
+            <a href="#" class="btn" style="margin-top: 15px">Jouer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <div class="container">
+        <h2>Contactez-nous</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Informations de contact</h3>
+            <div class="contact-details">
+              <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 Rue du Gaming, Paris, France</span>
+              </div>
+              <div>
+                <i class="fas fa-phone-alt"></i>
+                <span>+33 1 23 45 67 89</span>
+              </div>
+              <div>
+                <i class="fas fa-envelope"></i>
+                <span>contact@gamezone.com</span>
+              </div>
+            </div>
+            <h3>Suivez-nous</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-discord"></i></a>
+              <a href="#"><i class="fab fa-twitch"></i></a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <input type="text" name="name" placeholder="Votre nom" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Votre email"
+                required
+              />
+              <input type="text" name="subject" placeholder="Sujet" />
+              <textarea
+                name="message"
+                placeholder="Votre message"
+                required
+              ></textarea>
+              <button type="submit" class="btn">Envoyer</button>
+              <div id="formResponse" style="margin-top: 15px"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 Arcane. Tous droits réservés.</p>
+        <p>
+          Conçu avec
+          <i class="fas fa-heart" style="color: var(--accent-color)"></i> pour
+          la communauté gaming
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const responseDiv = document.getElementById("formResponse");
+
+          responseDiv.innerHTML = "Envoi en cours...";
+
+          fetch("save_contact.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              responseDiv.innerHTML = data;
+              if (data.includes("succès")) {
+                responseDiv.style.color = "green";
+                document.getElementById("contactForm").reset();
+              } else {
+                responseDiv.style.color = "red";
+              }
+            })
+            .catch((error) => {
+              responseDiv.innerHTML = "Erreur lors de l'envoi: " + error;
+              responseDiv.style.color = "red";
+            });
+        });
+
+      // MOVED THIS FUNCTION TO GLOBAL SCOPE
+      function toggleMenu() {
+        const hamburger = document.querySelector(".hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+
+        hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        overlay.classList.toggle("active");
+
+        if (mobileMenu.classList.contains("open")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      }
+
+      // MOVED THIS EVENT LISTENER TO GLOBAL SCOPE
+      document.addEventListener("click", function (event) {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+        const overlay = document.getElementById("overlay");
+
+        if (
+          mobileMenu.classList.contains("open") &&
+          !mobileMenu.contains(event.target) &&
+          !hamburger.contains(event.target)
+        ) {
+          toggleMenu();
+        }
+      });
+    </script>
+  </body>
+</html>

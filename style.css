@@ -1,0 +1,576 @@
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #2ecc71;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    position: relative;
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 15px auto;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .logo span {
+    color: var(--secondary-color);
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin-left: 30px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--secondary-color);
+  }
+
+  .hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+        no-repeat center center/cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Compétences Section */
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .skill-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .skill-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+  }
+
+  .skill-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+
+  /* Tournois Section */
+  .tournaments {
+    background-color: var(--light-color);
+  }
+
+  .tournament-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  .tournament-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+  .tournament-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .tournament-img {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .tournament-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .tournament-card:hover .tournament-img img {
+    transform: scale(1.1);
+  }
+
+  .tournament-info {
+    padding: 20px;
+  }
+
+  .tournament-info h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+
+  .tournament-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #777;
+  }
+
+  .tournament-info .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Jouer Section */
+  .play-section {
+    text-align: center;
+  }
+
+  .game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .game-card {
+    background: white;
+    border-radius: 10px;
+    width: 280px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+  }
+
+  .game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .game-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+  }
+
+  .game-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+
+  /* Contact Section */
+  .contact {
+    background-color: var(--light-color);
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+  }
+
+  .contact-info h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+
+  .contact-details {
+    margin-bottom: 30px;
+  }
+
+  .contact-details div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .contact-details i {
+    margin-right: 15px;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+
+  .social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .contact-form textarea {
+    height: 150px;
+    resize: vertical;
+  }
+
+  footer {
+    background: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  footer p {
+    margin-bottom: 10px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998; /* Below mobile menu (1001) and header (1000) */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ADDED: Mobile Menu Styles */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Start off-screen */
+    width: 300px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    z-index: 1001; /* Above header and overlay */
+    transition: right 0.3s ease;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .mobile-menu.open {
+    right: 0; /* Slide in */
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 15px 0;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--secondary-color);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+  }
+
+  body.dark-mode header {
+    background-color: #1e1e1e;
+  }
+
+  body.dark-mode .skill-card,
+  body.dark-mode .game-card,
+  body.dark-mode .tournament-card {
+    background: #1e1e1e;
+    color: #f5f5f5;
+  }
+
+  body.dark-mode footer {
+    background: #1e1e1e;
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1002; /* Above mobile menu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .modal-content h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 10px;
+  }
+
+  .modal-content label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .modal-content input[type="text"],
+  .modal-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .modal-content button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .modal-content button[type="submit"]:hover {
+    background-color: #1f6391;
+  }
+
+  /* Login/Register Button Styles */
+  .login-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+  }
+
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+
+  .register-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+  }
+
+  .register-button:hover {
+    background-color: #1e7e34;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    /* CHANGED: Hide desktop nav on mobile */
+    .nav-links {
+      display: none;
+    }
+
+    /* CHANGED: Show hamburger on mobile */
+    .hamburger {
+      display: block;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
