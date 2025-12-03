@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Site de Jeux - Prêt au Lancement</title>
+    <meta
+      name="description"
+      content="Tournament : Votre plateforme de gaming compétitif. Rejoignez une communauté de joueurs passionnés, participez à des tournois et améliorez vos compétences. Prêt à jouer ?"
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -16,7 +20,7 @@
     <header>
       <div class="container">
         <nav>
-          <a href="#" class="logo">Arcane</a>
+          <a href="#" class="logo">Tournament</a>
           <ul class="nav-links">
             <li><a href="#home">Accueil</a></li>
             <li><a href="#competences">Compétences</a></li>
@@ -25,7 +29,6 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
 
-          <!-- ADDED onclick -->
           <div class="hamburger" onclick="toggleMenu();">
             <i class="fas fa-bars"></i>
           </div>
@@ -154,7 +157,7 @@
             <div class="tournament-info">
               <h3>Championnat d'Été</h3>
               <div class="tournament-meta">
-                <span><i class="far fa-calendar-alt"></i> 15 Juillet 2023</span>
+                <span><i class="far fa-calendar-alt"></i> 15 Juillet 5</span>
                 <span><i class="fas fa-users"></i> 128 joueurs</span>
               </div>
               <p>
@@ -174,7 +177,7 @@
             <div class="tournament-info">
               <h3>Ligue des Débutants</h3>
               <div class="tournament-meta">
-                <span><i class="far fa-calendar-alt"></i> 5 Août 2023</span>
+                <span><i class="far fa-calendar-alt"></i> 5 Août 2025</span>
                 <span><i class="fas fa-users"></i> 64 joueurs</span>
               </div>
               <p>
@@ -195,7 +198,7 @@
               <h3>Coupe des Champions</h3>
               <div class="tournament-meta">
                 <span
-                  ><i class="far fa-calendar-alt"></i> 20 Septembre 2023</span
+                  ><i class="far fa-calendar-alt"></i> 20 Septembre 2025</span
                 >
                 <span><i class="fas fa-users"></i> 32 joueurs</span>
               </div>
@@ -309,7 +312,7 @@
 
     <footer>
       <div class="container">
-        <p>&copy; 2023 Arcane. Tous droits réservés.</p>
+        <p>&copy; 2025 Tournament. Tous droits réservés.</p>
         <p>
           Conçu avec
           <i class="fas fa-heart" style="color: var(--accent-color)"></i> pour
@@ -349,7 +352,6 @@
             });
         });
 
-      // MOVED THIS FUNCTION TO GLOBAL SCOPE
       function toggleMenu() {
         const hamburger = document.querySelector(".hamburger");
         const mobileMenu = document.getElementById("mobileMenu");
@@ -366,7 +368,6 @@
         }
       }
 
-      // MOVED THIS EVENT LISTENER TO GLOBAL SCOPE
       document.addEventListener("click", function (event) {
         const mobileMenu = document.getElementById("mobileMenu");
         const hamburger = document.querySelector(".hamburger");
